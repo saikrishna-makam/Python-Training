@@ -1,0 +1,96 @@
+Problem statement: Setup the virtual environment for multiple python versions with pyenv and conda.
+
+1. Creating venv with different python version
+
+- I have two python versions(2.7.15, 3.6.8) installed in my machine, so i created seperate environment for different python versions.
+
+saikrishna@Geeky:~$ mkdir PythonPractive
+
+saikrishna@Geeky:~$ cd PythonPractive/
+
+saikrishna@Geeky:~/PythonPractive$ mkdir Project1
+
+saikrishna@Geeky:~/PythonPractive$ cd Project1/
+
+
+- Creating new virtual environment for version 2.7.15
+
+
+saikrishna@Geeky:~/PythonPractive/Project1$ pyenv virtualenv 2.7.15 Project1Env
+created virtual environment CPython2.7.15.final.0-64 in 318ms
+  creator CPython2Posix(dest=/home/saikrishna/.pyenv/versions/2.7.15/envs/Project1Env, clear=False, no_vcs_ignore=False, global=False)
+  seeder FromAppData(download=False, pip=bundle, wheel=bundle, setuptools=bundle, via=copy, app_data_dir=/home/saikrishna/.local/share/virtualenv)
+    added seed packages: pip==20.3.4, setuptools==44.1.1, wheel==0.36.2
+  activators PythonActivator,CShellActivator,FishActivator,PowerShellActivator,BashActivator
+Requirement already satisfied: setuptools in /home/saikrishna/.pyenv/versions/2.7.15/envs/Project1Env/lib/python2.7/site-packages
+Requirement already satisfied: pip in /home/saikrishna/.pyenv/versions/2.7.15/envs/Project1Env/lib/python2.7/site-packages
+
+
+- Activating created virtual environment
+
+
+saikrishna@Geeky:~/PythonPractive/Project1$ pyenv local Project1Env
+
+(Project1Env) saikrishna@Geeky:~/PythonPractive/Project1$ cd ..
+
+saikrishna@Geeky:~/PythonPractive$ mkdir Project2
+
+saikrishna@Geeky:~/PythonPractive$ cd Project2
+
+
+- Creating new virtual environment for same version 2.7.15
+
+
+saikrishna@Geeky:~/PythonPractive/Project2$ pyenv virtualenv 2.7.15 Project2Env
+created virtual environment CPython2.7.15.final.0-64 in 170ms
+  creator CPython2Posix(dest=/home/saikrishna/.pyenv/versions/2.7.15/envs/Project2Env, clear=False, no_vcs_ignore=False, global=False)
+  seeder FromAppData(download=False, pip=bundle, wheel=bundle, setuptools=bundle, via=copy, app_data_dir=/home/saikrishna/.local/share/virtualenv)
+    added seed packages: pip==20.3.4, setuptools==44.1.1, wheel==0.36.2
+  activators PythonActivator,CShellActivator,FishActivator,PowerShellActivator,BashActivator
+Requirement already satisfied: setuptools in /home/saikrishna/.pyenv/versions/2.7.15/envs/Project2Env/lib/python2.7/site-packages
+Requirement already satisfied: pip in /home/saikrishna/.pyenv/versions/2.7.15/envs/Project2Env/lib/python2.7/site-packages
+
+
+- Activating created virtual environment
+
+
+saikrishna@Geeky:~/PythonPractive/Project2$ pyenv local Project2Env
+
+(Project2Env) saikrishna@Geeky:~/PythonPractive/Project2$ cd ..
+
+saikrishna@Geeky:~/PythonPractive$ cd Project1
+
+(Project1Env) saikrishna@Geeky:~/PythonPractive/Project1$ 
+
+(Project1Env) saikrishna@Geeky:~/PythonPractive/Project1$ cd ..
+
+saikrishna@Geeky:~/PythonPractive$ mkdir Project3
+
+saikrishna@Geeky:~/PythonPractive$ cd Project3
+
+
+- Creating new virtual environment for version 3.6.8 
+
+
+saikrishna@Geeky:~/PythonPractive/Project3$ pyenv virtualenv 3.6.8 Project3Env
+Looking in links: /tmp/tmpxco4yvq6
+Requirement already satisfied: setuptools in /home/saikrishna/.pyenv/versions/3.6.8/envs/Project3Env/lib/python3.6/site-packages (40.6.2)
+Requirement already satisfied: pip in /home/saikrishna/.pyenv/versions/3.6.8/envs/Project3Env/lib/python3.6/site-packages (18.1)
+
+
+- Activating created virtual environment
+
+
+saikrishna@Geeky:~/PythonPractive/Project3$ pyenv local Project3Env
+
+(Project3Env) saikrishna@Geeky:~/PythonPractive/Project3$ cd ..
+
+saikrishna@Geeky:~/PythonPractive$ cd Project1
+
+(Project1Env) saikrishna@Geeky:~/PythonPractive/Project1$ cd ..
+
+saikrishna@Geeky:~/PythonPractive$ cd Project2
+
+(Project2Env) saikrishna@Geeky:~/PythonPractive/Project2$ 
+
+(*As you navigate (cd) between the projects, your versions and environments will automatically activate)
