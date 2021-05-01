@@ -1,0 +1,211 @@
+* Python Basics Assignment :
+
+1. Identify the appropriate usecases for Python DataStructures.
+
+-> 1. Array : 
+        
+        Python's Arrays created with array.array class and they are mutable means we can update the array any number of times 
+        once assigned. Arrays are different from python's other data-structures because arrays are collection of single datatype
+        values. 
+        
+        Real-time use : 
+            a. Quiz test application can use arrays to store the questions and their correct options.
+            b. 2D-arrays can be used as matrix for plotting graphs and statistics.
+            
+-> 2. List : 
+          
+        List's are similar to arrays but can store the values of multiple data-types and list's in python are mutable.
+        
+        Real-time use :
+            a. List can be used in applications to store the users info.
+            b. List can be used in social media application for storing and managing the app resources.  
+            
+-> 3. Tuple :
+
+        Tuple contain the values of multiple data-types and tuple is immutable container.
+        
+        Real-time use :
+            Tuples can be used in calender applications for storing the weekdays, moths, year-wise data.
+            
+-> 4. Dictionary :
+
+        Dictionaries in python are used to store the key-value pairs. The keys in dictionaries are always unique to contain the
+        unique records but values can be duplicated in dictionaries. We can use the dictionary keys to get the values associated 
+        with the keys. Dictionaries are mutable datastructures.
+        
+        Real-time use :
+            a. We can use the dictionaries to implement Phone Directory application in which we can bind the Person names with 
+               their phone numbers.
+            b. In the android development, Android standard library contains the bundle object. Bundle object is used to store the 
+               key-value pair data and is used for persistence of data across application state.
+               
+               
+2. List a few python modules & packages
+
+* Modules :
+    
+    - array
+    - calendar
+    - copy
+    - json
+    - pathlib
+    - random
+    - datetime
+    
+* Packages :
+
+    - Numpy
+    - Requests
+    - Pandas
+    - Arrow
+    
+3. Perform CRUD on sample data using these data structures   
+ 
+1. Array Operations:
+
+>>> import array
+
+>>> user_names = array.array("f", ("suhas", "sahil", "nikita", "amit", "trupti"))
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: must be real number, not str
+
+>>> user_names = array.array("str", ("suhas", "sahil", "nikita", "amit", "trupti"))
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: array() argument 1 must be a unicode character, not str
+
+>>> values = array.array("i", (10, 20, 30, 40))
+
+>>> values[0]
+10
+
+>>> values.insert(2, 25)
+
+>>> values
+array('i', [10, 20, 25, 30, 40])
+
+>>> values.append(50)
+
+>>> values
+array('i', [10, 20, 25, 30, 40, 50])
+
+>>> values.remove(20)
+
+>>> values
+array('i', [10, 25, 30, 40, 50])
+
+>>> arr[1] = "suhas"
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'arr' is not defined
+
+>>> values[1] = "suhas"
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: an integer is required (got type str)
+
+2. List Operations:
+
+>>> user_data = [1, "suhas", 500.0]
+
+>>> user_data[1]
+'suhas'
+
+>>> user_data.insert(2, "gore")
+
+>>> user_data
+[1, 'suhas', 'gore', 500.0]
+
+>>> user_data.append("active")
+
+>>> user_data
+[1, 'suhas', 'gore', 500.0, 'active']
+
+>>> user_data.remove(500.0)
+
+>>> user_data
+[1, 'suhas', 'gore', 'active']
+
+3. Tuple Operations :
+
+>>> days = ("sun", "mon", "tue", "wed", "thur", "fri", "sat")
+
+>>> days
+('sun', 'mon', 'tue', 'wed', 'thur', 'fri', 'sat')
+
+>>> days[2]
+'tue'
+
+>>> days.insert(2, "monday")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: 'tuple' object has no attribute 'insert'
+
+>>> days.append(2, "saturday")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: 'tuple' object has no attribute 'append'
+
+>>> days.delete("sat")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: 'tuple' object has no attribute 'delete'
+
+>>> days[:]
+('sun', 'mon', 'tue', 'wed', 'thur', 'fri', 'sat')
+
+>>> days[2:5]
+('tue', 'wed', 'thur')
+
+>>> days[3:]
+('wed', 'thur', 'fri', 'sat')
+
+>>> days[4:-1]
+('thur', 'fri')
+
+>>> days.index("sat")
+6
+
+>>> days.count("mon")
+1
+
+4. Dictionary Operations:
+
+>>> cricketer_jereseynum = { 45 : "Rohit Sharma", 18 : "Virat Kohli", 7 : "MS Dhoni"}
+
+>>> cricketer_jereseynum[45]
+'Rohit Sharma'
+
+>>> cricketer_jereseynum.get(18)
+'Virat Kohli'
+
+>>> cricketer_jereseynum[8]="Ravindra Jadeja"
+
+>>> cricketer_jereseynum
+{45: 'Rohit Sharma', 18: 'Virat Kohli', 7: 'MS Dhoni', 8: 'Ravindra Jadeja'}
+
+>>> cricketer_jereseynum.pop(18
+... )
+'Virat Kohli'
+
+>>> cricketer_jereseynum
+{45: 'Rohit Sharma', 7: 'MS Dhoni', 8: 'Ravindra Jadeja'}
+
+>>> cricketer_jereseynum.popitem()
+(8, 'Ravindra Jadeja')
+
+>>> cricketer_jereseynum.keys()
+dict_keys([45, 7])
+
+>>> cricketer_jereseynum.items()
+dict_items([(45, 'Rohit Sharma'), (7, 'MS Dhoni')])
+
+>>> cricketer_jereseynum.values()
+dict_values(['Rohit Sharma', 'MS Dhoni'])
+
+>>> cricketer_jereseynum.clear()
+
+>>> cricketer_jereseynum
+{}
+
