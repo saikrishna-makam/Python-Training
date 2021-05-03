@@ -180,7 +180,35 @@ AttributeError: 'tuple' object has no attribute 'delete'
 >>> days.count("mon")
 1
 
-4. Dictionary Operations:
+4. Set Operations :
+
+>>> roll_num = {}
+
+>>> type(roll_num)
+<class 'dict'>
+
+>>> roll_num = set()
+
+>>> type(roll_num)
+<class 'set'>
+
+>>> roll_num.add(10)
+
+>>> roll_num.add(20)
+
+>>> roll_num.add(30)
+
+>>> roll_num.add(10)
+
+>>> roll_num
+{10, 20, 30}
+
+>>> roll_num.remove(10)
+
+>>> roll_num
+{20, 30}
+
+5. Dictionary Operations:
 
 >>> cricketer_jereseynum = { 45 : "Rohit Sharma", 18 : "Virat Kohli", 7 : "MS Dhoni"}
 
