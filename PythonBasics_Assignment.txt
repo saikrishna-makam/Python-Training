@@ -8,7 +8,7 @@
         once assigned. Arrays are different from python's other data-structures because arrays are collection of single datatype
         values. 
         
-        Real-time use : 
+        Applications : 
             a. Quiz test application can use arrays to store the questions and their correct options.
             b. 2D-arrays can be used as matrix for plotting graphs and statistics.
             
@@ -16,7 +16,7 @@
           
         List's are similar to arrays but can store the values of multiple data-types and list's in python are mutable.
         
-        Real-time use :
+        Applications :
             a. List can be used in applications to store the users info.
             b. List can be used in social media application for storing and managing the app resources.  
             
@@ -24,21 +24,31 @@
 
         Tuple contain the values of multiple data-types and tuple is immutable container.
         
-        Real-time use :
-            Tuples can be used in calender applications for storing the weekdays, moths, year-wise data.
+        Applications :
+            a. Tuple can be used in calender applications for storing the weekdays, moths, year-wise data.
+            b. Tuple can be used to store database records through SQL query at a time.
             
+            
+-> 4. Set :
+        A Set is an unordered collection of values that is iterable, mutable and it has no duplicate elements. Python’s set class 
+        represents the mathematical notion of a set.
+        
+        Applications :
+            a. Set can be used in problems where problem demands unique elements operations.
+            b. Sets are used for performing some of mathmatical and database join operations. 
+
 -> 4. Dictionary :
 
         Dictionaries in python are used to store the key-value pairs. The keys in dictionaries are always unique to contain the
         unique records but values can be duplicated in dictionaries. We can use the dictionary keys to get the values associated 
         with the keys. Dictionaries are mutable datastructures.
         
-        Real-time use :
+        Applications :
             a. We can use the dictionaries to implement Phone Directory application in which we can bind the Person names with 
                their phone numbers.
             b. In the android development, Android standard library contains the bundle object. Bundle object is used to store the 
                key-value pair data and is used for persistence of data across application state.
-               
+            c. Data in json stores in dictionary key-value pairs. 
                
 2. List a few python modules & packages
 
