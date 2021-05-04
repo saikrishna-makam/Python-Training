@@ -1,0 +1,203 @@
+1. Identify the appropriate usecases for Iterator, Generator.
+
+->
+
+Usecases for Iterator :
+- To iterate on iterable objects iterator is best method to use. 
+- Python iterator is more memory-efficient. Iterator can be used for iterating/computing in large sets of data to save memory space.
+
+Usecases for Generator :
+- Generators are used to write fast and compact code.
+- Generators are simpler to code. So generators can be used in simpler cases of iterations.
+- Generators are used for performing generator comprehension.
+
+2. How Iterators are different from generator & when to use what.
+
+-> 
+
+Iterator :
+
+An iterator is an object that can iterated on iterable object. We can call iter() method to create iterator and next() method to 
+iterate on iterables. Iterators don't compute the value of each item when instantiated instead it compute only when you ask for it. This is known as lazy evaluation.
+
+Generator :
+
+Generator functions allow us to create iterators in a more simple fashion. Generators are implemented using a function and yield keyword. Generators saves the state of the function that means when next time the function is called, execution continues from where it left off, with the same variable values it had before yielding. Generator is an iterator.
+
+When to use what =>
+
+Iterator :
+
+In memory saving senario, when we have a very large data set to compute, that time we can use iterators. As it follows lazy 
+evaluation, generate the next element of an iterable object when requested.
+
+Generator :
+
+- In simple cases, we can use generators to perform iterations.
+- We can use generator expressions for performing generator comprehension.
+
+3. Explain how global & non-local can be used.
+
+->
+
+Global variables are the one that is defined and declared outside a function and local variables are defined and declared inside 
+the function. Global variables can be accessed outside as well as inside the function scope(i.e. in whole program scope) but local 
+variables are accessed inside of function only. The local variable is destroyed once the stack frame for function is poped i.e. 
+after function execution finished.
+
+- Examples of using nonlocal keyword :
+
+In below example, in method fish(), we are concatenating '-Sushi' with fish_name string and assigning into the new fish_name 
+variable. But when it is going to do so, it cannot find the value of fish_name as no value has been assigned to fish_name before 
+in fish() method. So this program throws UnboundLocalError.
+
+
+def water():
+    fish_name = 'Gold-Fish'
+    
+    def fish():
+        fish_name = fish_name + '-Sushi'
+        print(fish_name)
+    
+    fish()
+water()
+
+*Output:
+
+Traceback (most recent call last):
+  File "NonlocalPractice.py", line 9, in <module>
+    water()
+  File "NonlocalPractice.py", line 8, in water
+    fish()
+  File "NonlocalPractice.py", line 5, in fish
+    fish_name = fish_name + '-Sushi'
+UnboundLocalError: local variable 'fish_name' referenced before assignment
+
+
+Now consider below example, We have explicitly told Python that, do not initialize a new variable, instead access nonlocal 
+fish_name variable. using the keyword nonlocal So when interpreter performs concatenation, it access the value 'Gold-Fish' and 
+concate the string. 
+
+def water():
+    fish_name = 'Gold-Fish'
+    
+    def fish():
+        nonlocal fish_name
+        fish_name = fish_name + '-Sushi'
+        print(fish_name)
+    
+    fish()
+water()
+
+*Output: 
+
+Gold-Fish-Sushi
+
+
+- Examples of using global keyword :
+
+In below example, in method fish(), we are concatenating ' Movie' with movie string and assigning into the new movie variable. But when it is going to do so, it cannot find the value of movie as no value has been assigned to movie before in movie() method. So this program throws UnboundLocalError.
+
+movie = 'Godavari'
+
+def show_movie():
+    movie = movie + ' Movie'
+    print(movie) 
+    
+show_movie()
+
+*Output :
+
+Traceback (most recent call last):
+  File "GlobalPractice1.py", line 7, in <module>
+    show_movie()
+  File "GlobalPractice1.py", line 4, in show_movie
+    movie = movie + ' Movie'
+UnboundLocalError: local variable 'movie' referenced before assignment
+
+
+Now consider below example, We have explicitly told Python that, do not initialize a new variable, instead access global movie variable. using the keyword global So when interpreter performs concatenation, it access the value 'Godavari' and concate the string. 
+
+movie = 'Godavari'
+
+def show_movie():
+    global movie
+    movie = movie + ' Movie'
+    print(movie) 
+    
+show_movie()
+
+*Output:
+
+Godavari Movie
+
+
+
+5. Create a list of 100k integers & iterate the list using range vs xrange.Measure the performance in terms of memory, time.
+
+
+*Memory performance :
+
+- Program using range() method :
+
+import sys
+
+range_memory = range(1, 100000)
+
+print("Size allotted to range is :" + str(sys.getsizeof(range_memory)))
+
+#Output:
+#Size allotted to range is :800064
+
+- Program using xrange() method :
+
+import sys
+
+range_memory = xrange(1, 100000)
+
+print("Size allotted to xrange is :" + str(sys.getsizeof(range_memory)))
+
+#Output:
+#Size allotted to xrange is :40
+
+
+*From above programs, variable refering to range() method return object takes more memory than variable storing the range value 
+return by xrange() method.
+
+
+*Time performance :
+
+import time
+
+range_obj = range(1, 100000)
+
+start_time = time.time()
+
+for i in range_obj:
+    pass
+
+end_time = time.time()
+
+print("Time taken to iterate: " + str(end_time - start_time))
+
+#Output :
+#Time taken to iterate: 0.0031590461731
+
+
+
+import time
+
+xrange_obj = xrange(1, 100000)
+
+start_time = time.time()
+
+for i in xrange_obj:
+    pass
+
+end_time = time.time()
+
+print("Time taken to iterate: " + str(end_time - start_time))
+
+#Output :
+#Time taken to iterate: 0.00361204147339
+
