@@ -13,10 +13,23 @@
 #Solution:
 
 def mid(text):
-    textlength = len(text)
-    if textlength % 2 != 0:
-        return text[textlength // 2]
-    return ""
+    '''return middle character of string if the string is odd otherwise empty string is returned.'''
+
+    textLength = len(text)
+    last = textLength - 1
+    
+    for i in range(0, textLength):    
+        if i == last:
+            return text[i]
+        elif last > 0:
+            last -= 1
+        else:
+            return ''
+    
+    
+    #if textlength % 2 != 0:
+    #    return text[textlength // 2]
+    #return ""
     
 print(mid("abc"))
 print(mid("aaaa"))

@@ -1,0 +1,14 @@
+*What are different ways to get the indices of the list element.
+
+- The best and easiest way to find the index of the particular element from iterable object is to use built-in index() method of 
+list. The index() method returns the index of first occurrence of element.
+
+- The other way is to iterate over list using naive approach and if element is found then append the index of element in list. 
+Finally print that list to get all the occurence indices of the list element.
+
+- We can also use list comprehension to get the indices of the list element.
+
+- filter() method can also be used to filter the list and find the indices of the list element. We can set the element matching 
+condition in filter and for those elements the condition returns true boolean value, only those elements indices will be appended 
+to the list and returned. 
+
