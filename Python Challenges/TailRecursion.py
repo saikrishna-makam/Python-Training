@@ -10,5 +10,5 @@ text = "Godavari"
 print("Length of string {}: {}".format(text, findLength(text)))    
 
 #Output:
-#Length of string Saikrishna is 8  
+#Length of string Godavari: 8  
 
