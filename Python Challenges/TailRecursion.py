@@ -9,6 +9,6 @@ def findLength(value, itr = 0):
 text = "Godavari"
 print("Length of string {}: {}".format(text, findLength(text)))    
 
-#Output:
-#Length of string Saikrishna is 8  
+#Output :
+#Length of string Godavari: 8  
 
