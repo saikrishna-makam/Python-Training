@@ -1,0 +1,12 @@
+def format_number(number):
+    strNumber = str(number)
+    result = ""
+    count = 0
+    for i in range(len(strNumber) - 1, -1, -1):
+        result = result + strNumber[i]
+        count += 1
+        if count % 3 == 0:
+            result = result + ","
+    return result[::-1]
+    
+print(format_number(1000))
